@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Pass</title>
+</head>
+<body>
+    <script>
+        
+        let mansNumber = prompt("Введіть кількість символів в паролоі > 8: ");
+        mansNumber = parseInt(mansNumber)
+
+        if(mansNumber < 8) {
+            console.log('Занадто короткий пароль');
+        }else if(isNaN(mansNumber)){
+            console.log('Ви нічого не ввели або скасували');
+        }else{
+            let readyNum = "";
+            const charSym = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
+            for (let i = 0; i < mansNumber; i++){
+               
+                const randomIndex = Math.floor(Math.random() * charSym.length)
+                const randomChar = charSym.charAt(randomIndex);
+                readyNum += randomChar;
+            }
+            console.log(readyNum);
+        }
+
+    
+    </script>
+</body>
+</html>
